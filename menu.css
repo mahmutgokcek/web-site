@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e8e8e8;
+    color: #222;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    padding-bottom: 50px;
+}
+
+nav {
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s ease-in-out;
+}
+
+nav.active {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+nav .container {
+    align-items: center;
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    transition: all .3s ease-in-out;
+
+}
+
+nav.active .container {
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav a {
+    color: #fff;
+    padding: 7px 15px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+nav li a:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+nav.active a {
+    color: #000;
+    padding: 7px 10px;
+}
+
+nav.active li a:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+
+.hero {
+    align-items: center;
+    background-image: url(img/pexels-photo-450035.jpeg);
+    background-size: cover;
+    background-position: bottom center;
+    color: #fff;
+    display: flex;
+    height: calc(100vh - 30px);
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    z-index: -2;
+}
+
+.hero::before {
+    content: ' ';
+    background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2, .content h3 {
+    font-size: 150%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.content p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3C97BF;
+    text-decoration: none;
+
+}
+
+
+#onlyJSyc{
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+    z-index: 9999;
+    border: none;
+    outline: none;
+    background: url(img/yukari.png) no-repeat;
+    cursor: pointer;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+.asd
+{
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0, 0 6px 12px rgba(0,0,0,0.3);
+    margin: 30px 60px 0px 60px;
+}
+
+
+
+/* Card hover */
+
+.box{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.box .card{
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.box .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.6s;
+}
+
+.box .card .face.face1{
+    position: relative;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.box .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.box .card .face.face1 .content{
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.box .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.box .card .face.face1 .content img{
+    max-width: 100px;
+}
+
+.box .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+.box .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.box .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.box .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+}
+
+.box .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.box .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+
+/* responsive */
+@media screen and (min-width: 360px) and (max-width: 480px){
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content p
+    {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content a
+    {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 359px) {
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content p
+    {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content a
+    {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content p
+    {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content a
+    {
+        font-size: 30px;
+    }
+}
+/*
+@media screen and (min-width: 1024px) and (max-width: 1365px){
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+}
+*/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content p
+    {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+    .box .card .face.face2 .content a
+    {
+        font-size: 30px;
+    }
+}
+/*@media screen and (max-width:374px)
+{
+    nav .container
+    {
+        height: 200px;
+    }
+    nav .container .logo
+    {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    nav li a
+    {
+        font-size: 30px;
+    }
+    nav li a:last-child
+    {
+        margin-right: 20px;
+    }
+
+    .hero .container h1
+    {
+        font-size: 70px;
+    }
+    .hero .container p
+    {
+        font-size: 30px;
+    }
+
+    .asd
+    {
+        width: 900px;
+        margin: 25px auto 100px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .box
+    {
+        display: inline-block;
+    }
+
+    .box .card
+    {
+        position: relative;
+        margin: 0 75px 0 75px;
+    }
+
+    .box .card .face
+    {
+        width: 700px;
+        height: 200px;
+    }
+    .box .card .face.face1
+    {
+        height: 350px;
+    }
+    .box .card .face.face1 .content img
+    {
+        max-width: 200%;
+    }
+    .box .card .face.face1 .content h3
+    {
+        font-size: 40px;
+    }
+    .asd h2
+    {
+        font-size: 35px;
+    }
+
+    footer
+    {
+        height: 100px;
+    }
+    footer p
+    {
+        margin-top: 25px;
+        font-size: 30px;
+    }
+}*/
+
+
+
